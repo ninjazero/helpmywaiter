@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help Your Waiter — Allergy Cards</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
+  color:#26302c;
+  background:#fffaf3;
+  line-height:1.55
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 0
+}
+
+.brand{
+  font-weight:900;
+  font-size:1.35rem;
+  letter-spacing:-.04em;
+  color:#24483d
+}
+
+.nav a{
+  font-weight:700;
+  color:#5e6b64
+}
+
+.hero{
+  padding:62px 0 80px
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:center
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-weight:900;
+  font-size:.78rem;
+  color:#a35d31
+}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,5.8rem);
+  line-height:.94;
+  letter-spacing:-.065em;
+  margin:14px 0 25px;
+  color:#203c34
+}
+
+.hero p{
+  font-size:1.2rem;
+  max-width:600px;
+  color:#5f6964
+}
+
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:30px
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 24px;
+  border-radius:999px;
+  font-weight:900
+}
+
+.primary{
+  background:#d76c3f;
+  color:white;
+  box-shadow:0 8px 24px #d76c3f33
+}
+
+.secondary{
+  border:2px solid #cad4cd;
+  color:#315148
+}
+
+.product-stage{
+  min-height:470px;
+  border-radius:34px;
+  background:#dfe9df;
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden
+}
+
+.blob{
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:#f2c76e;
+  border-radius:50%;
+  right:-80px;
+  top:-80px
+}
+
+.card{
+  width:300px;
+  min-height:390px;
+  background:#fff;
+  box-shadow:0 24px 50px #28473b35;
+  border-radius:16px;
+  transform:rotate(-5deg);
+  padding:30px;
+  position:relative
+}
+
+.card .top{
+  font-weight:900;
+  color:#b75831;
+  font-size:.8rem;
+  letter-spacing:.13em;
+  text-transform:uppercase
+}
+
+.card h3{
+  font-size:2rem;
+  line-height:1.02;
+  margin:16px 0;
+  color:#243f36
+}
+
+.card .rule{
+  height:1px;
+  background:#dce3de;
+  margin:18px 0
+}
+
+.allergy{
+  font-weight:800;
+  font-size:1.05rem;
+  margin:11px 0
+}
+
+.small{
+  font-size:.78rem;
+  color:#6d766f
+}
+
+.section{
+  padding:85px 0
+}
+
+.section h2{
+  font-size:clamp(2rem,4vw,3.3rem);
+  line-height:1.05;
+  letter-spacing:-.045em;
+  color:#25453b;
+  margin:0 0 18px
+}
+
+.center{
+  text-align:center
+}
+
+.sub{
+  max-width:680px;
+  margin:0 auto 45px;
+  color:#68736d
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.tile{
+  background:white;
+  border:1px solid #e2e7e2;
+  border-radius:22px;
+  padding:30px
+}
+
+.num{
+  font-size:.85rem;
+  font-weight:900;
+  color:#c5663b
+}
+
+.tile h3{
+  color:#29483f;
+  margin:8px 0
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:stretch
+}
+
+.box{
+  background:#29483f;
+  color:white;
+  border-radius:28px;
+  padding:42px
+}
+
+.box h2{
+  color:white
+}
+
+.price{
+  background:#fff;
+  border:1px solid #e1e7e1;
+  border-radius:28px;
+  padding:42px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+
+.price strong{
+  font-size:3.5rem;
+  color:#25453b;
+  letter-spacing:-.06em
+}
+
+.price .btn{
+  width:100%;
+  text-align:center;
+  margin-top:22px
+}
+
+.faq{
+  max-width:800px;
+  margin:auto
+}
+
+.q{
+  padding:22px 0;
+  border-bottom:1px solid #d9e0da
+}
+
+.q h3{
+  margin:0 0 6px;
+  color:#29483f
+}
+
+.disclaimer{
+  font-size:.86rem;
+  color:#69736d;
+  max-width:850px;
+  margin:30px auto;
+  text-align:center
+}
+
+.footer{
+  border-top:1px solid #e0e5df;
+  padding:28px 0 45px;
+  color:#718078;
+  font-size:.9rem;
+  display:flex;
+  justify-content:space-between;
+  gap:20px
+}
+
+@media(max-width:800px){
+  .hero-grid,
+  .split{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    padding-top:30px
+  }
+
+  .product-stage{
+    min-height:410px
+  }
+
+  .cards{
+    grid-template-columns:1fr
+  }
+
+  .nav a{
+    display:none
+  }
+
+  .section{
+    padding:65px 0
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<nav class="nav">
+  <a class="brand" href="#top">Help Your Waiter</a>
+  <a href="#buy">Buy 20 Allergy Cards →</a>
+</nav>
+
+</div>
+
+<main id="top">
+
+<section class="hero">
+
+<div class="wrap hero-grid">
+
+<div>
+
+<div class="eyebrow">
+  Clear communication at the table
+</div>
+
+<h1>
+  Make your allergies clear before you order.
+</h1>
+
+<p>
+  Help Your Waiter cards give restaurant staff a simple,
+  visible way to understand your food allergies and dietary needs.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="#buy">
+  Get 20 Allergy Cards — $5
+</a>
+
+<a class="btn secondary" href="#how">
+  How it works
+</a>
+
+</div>
+
+</div>
+
+<div class="product-stage">
+
+<div class="blob"></div>
+
+<div class="card">
+
+<div class="top">
+  Help Your Waiter
+</div>
+
+<h3>
+  FOOD<br>
+  ALLERGIES
+</h3>
+
+<div class="rule"></div>
+
+<div class="allergy">• Dairy</div>
+<div class="allergy">• Nuts</div>
+<div class="allergy">• Peanuts</div>
+<div class="allergy">• Soy</div>
+<div class="allergy">• Orange</div>
+<div class="allergy">• Sesame</div>
+<div class="allergy">• Kiwi</div>
+<div class="allergy">• Avocado</div>
+
+<div class="rule"></div>
+
+<div class="small">
+  Clearly communicate your food allergies before ordering.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="how">
+
+<div class="wrap center">
+
+<h2>
+  Simple at the table.
+</h2>
+
+<p class="sub">
+  A card won't replace a conversation with restaurant staff.
+  It helps make that conversation clearer, especially when
+  there are multiple allergies to explain.
+</p>
+
+<div class="cards">
+
+<div class="tile">
+
+<div class="num">01</div>
+
+<h3>
+  Keep them handy
+</h3>
+
+<p>
+  Keep a few cards in your wallet, purse, backpack,
+  or glove box so they're ready whenever you eat away from home.
+</p>
+
+</div>
+
+
+<div class="tile">
+
+<div class="num">02</div>
+
+<h3>
+  Hand one to your server
+</h3>
+
+<p>
+  Give the card to your server before ordering so your
+  allergies are easy to see and reference.
+</p>
+
+</div>
+
+
+<div class="tile">
+
+<div class="num">03</div>
+
+<h3>
+  Talk through your meal
+</h3>
+
+<p>
+  Use the card as a prompt for a direct conversation
+  about ingredients and preparation.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="wrap split">
+
+<div class="box">
+
+<h2>
+  20 cards. One simple way to communicate.
+</h2>
+
+<p>
+  Our Food Allergies cards list common food allergens clearly,
+  helping you communicate your needs without having to repeat
+  a long list every time.
+</p>
+
+<p>
+  Order a pack of 20 and keep them wherever you need them—
+  at home, in the car, or ready for your next meal out.
+</p>
+
+</div>
+
+
+<div class="price" id="buy">
+
+<div class="eyebrow">
+  20-card pack
+</div>
+
+<h2>
+  Food Allergies Cards
+</h2>
+
+<p>
+  A pack of 20 printed allergy communication cards.
+</p>
+
+<strong>
+  $5
+</strong>
+
+<a
+  class="btn primary"
+  href="#"
+  onclick="alert('PayPal checkout link coming soon.');return false;"
+>
+  Buy 20 Cards — $5
+</a>
+
+<p class="small">
+  <strong>Shipping included</strong>
+  within the continental United States.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="center">
+
+<h2>
+  Questions?
+</h2>
+
+<p class="sub">
+  Here are a few things customers may want to know.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<div class="q">
+
+<h3>
+  What do I get for $5?
+</h3>
+
+<p>
+  You receive 20 Food Allergies cards.
+  Shipping is included for addresses in the continental United States.
+</p>
+
+</div>
+
+
+<div class="q">
+
+<h3>
+  What allergies are listed?
+</h3>
+
+<p>
+  The pictured card lists Dairy, Nuts, Peanuts, Soy,
+  Orange, Sesame, Kiwi, and Avocado.
+</p>
+
+</div>
+
+
+<div class="q">
+
+<h3>
+  Can I use the cards more than once?
+</h3>
+
+<p>
+  They are designed to be handed to restaurant staff
+  as a clear communication aid. Keep extra cards handy
+  for future meals.
+</p>
+
+</div>
+
+
+<div class="q">
+
+<h3>
+  Where do you ship?
+</h3>
+
+<p>
+  We currently ship only within the continental United States,
+  with shipping included in the $5 price.
+</p>
+
+</div>
+
+</div>
+
+
+<p class="disclaimer">
+
+<strong>Important:</strong>
+Help Your Waiter cards are intended to support communication.
+They do not replace medical advice or direct communication
+with restaurant staff, and they cannot guarantee that food
+is free from allergens or cross-contact.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="wrap footer">
+
+<span>
+  © 2026 Help Your Waiter
+</span>
+
+<span>
+  Contact · Privacy · Terms
+</span>
+
+</div>
+
+</footer>
+
+</body>
+</html>
