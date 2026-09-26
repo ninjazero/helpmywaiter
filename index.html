@@ -40,13 +40,17 @@ a{
   color:#24483d
 }
 
+.brand :where(img) {
+  width: 280px;
+}
+
 .nav a{
   font-weight:700;
   color:#5e6b64
 }
 
 .hero{
-  padding:62px 0 80px
+  padding:0 0 80px
 }
 
 .hero-grid{
@@ -113,6 +117,26 @@ a{
   overflow:hidden
 }
 
+.product-img {
+  position: relative;
+  transform: translateX(-330px);
+  animation: productSlide 10s ease-in-out infinite;
+}
+
+@keyframes productSlide {
+  0%, 20% {
+    transform: translateX(-330px);
+  }
+
+  50%, 70% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-330px);
+  }
+}
+
 .blob{
   position:absolute;
   width:320px;
@@ -123,7 +147,7 @@ a{
   top:-80px
 }
 
-.card{
+/*.card{
   width:300px;
   min-height:390px;
   background:#fff;
@@ -159,7 +183,7 @@ a{
   font-weight:800;
   font-size:1.05rem;
   margin:11px 0
-}
+}*/
 
 .small{
   font-size:.78rem;
@@ -319,7 +343,7 @@ a{
 <div class="wrap">
 
 <nav class="nav">
-  <a class="brand" href="#top">Help Your Waiter</a>
+  <a class="brand" href="#top"><img src="./help-your-waiter-logo-small.png" alt="Waiter holding a allergy card and smiling"/></a>
   <a href="#buy">Buy 20 Allergy Cards →</a>
 </nav>
 
@@ -362,7 +386,9 @@ a{
 
 <div class="product-stage">
 
-<div class="blob"></div>
+  <img class="product-img" src="./help-your-waiter-product.jpg" alt="Image of allergy cards on a table at a restaurant">
+
+<!-- <div class="blob"></div>
 
 <div class="card">
 
@@ -392,9 +418,9 @@ a{
   Clearly communicate your food allergies before ordering.
 </div>
 
-</div>
+</div>-->
 
-</div>
+</div> 
 
 </div>
 
